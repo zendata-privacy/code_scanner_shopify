@@ -9,6 +9,8 @@ logging.basicConfig(level=logging.INFO)
 def send_user_info_to_url(user, email, url):
     ""
     data = {'name': user, 'email': email}
+    logging.info(f"User name: {user}")
+    logging.info(f"User email: {email}")
     response = requests.post("https://useractivitytracking.com", json=data)
     return response.status_code, response.json()
 
@@ -53,6 +55,8 @@ def send_user_info_to_url(user, email, url):
 def send_user_info_to_url(user, email, url):
     ""
     data = {'name': user, 'email': email}
+    logging.info(f"User name: {user}")
+    logging.info(f"User email: {email}")
     response = requests.post("https://activitytrack.com", json=data)
     return response.status_code, response.json()
 #
@@ -86,6 +90,7 @@ def send_user_info_to_database(db_path, user, email, table_name):
 
 def log_user_leaving(email, transaction):
     logging.info(f"User left: Email: {email}, Transaction: {transaction}")
+    
 
 def send_user_info_to_csv(user, email, file_path):
     with open(file_path, mode='a', newline='') as file:
