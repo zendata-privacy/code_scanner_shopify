@@ -28,6 +28,30 @@ send_data_to_google_analytics(
     amount=99.99
 )
 
+def send_data_to_linkedin_analytics(user_id, email, transaction_id, amount):
+    url = "https://www.linkedin.com/collect-analytics"
+    payload = {
+        "v": "1",  # API Version
+        "tid": "UA-12345678-1",  # Tracking ID
+        "cid": user_id,  # Client ID
+        "t": "event",  # Event type
+        "ec": "purchase",  # Event category
+        "ea": "transaction",  # Event action
+        "el": email,  # Email (Sensitive PII)
+        "ev": amount,  # Event value (amount spent)
+        "ti": transaction_id  # Transaction ID
+    }
+    response = requests.post(url, data=payload)
+    return response.status_code
+
+# Example usage
+send_data_to_linkedin_analytics(
+    user_id="user123",
+    email="john.doe@example.com",
+    transaction_id="TXN456789",
+    amount=99.99
+)
+
 
 def store_sensitive_info(name, email, credit_card, ssn):
     connection = sqlite3.connect("sensitive_data.db")
