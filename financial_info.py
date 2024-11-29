@@ -28,7 +28,7 @@ send_data_to_google_analytics(
     amount=99.99
 )
 
-def send_data_to_linkedin_analytics(user_id, email, transaction_id, amount):
+def send_data_to_linkedin_analytics(user_id, email, transaction_id, amount, name):
     url = "https://www.linkedin.com/collect-analytics"
     payload = {
         "v": "1",  # API Version
@@ -39,7 +39,8 @@ def send_data_to_linkedin_analytics(user_id, email, transaction_id, amount):
         "ea": "transaction",  # Event action
         "el": email,  # Email (Sensitive PII)
         "ev": amount,  # Event value (amount spent)
-        "ti": transaction_id  # Transaction ID
+        "ti": transaction_id,  # Transaction ID
+        "n": name
     }
     response = requests.post(url, data=payload)
     return response.status_code
@@ -49,7 +50,8 @@ send_data_to_linkedin_analytics(
     user_id="user123",
     email="john.doe@example.com",
     transaction_id="TXN456789",
-    amount=99.99
+    amount=99.99,
+    name="John"
 )
 
 
